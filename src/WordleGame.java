@@ -59,6 +59,20 @@ public class WordleGame {
 
             }
         }
+            for (int i = 0; i < wordLength; i++) {
+                if (guessChars[i] != ' ') {
+                    for (int j = 0; j < wordLength; j++) {
+                        if (!matchedSecret[j] && guessChars[i] == secretChars[j]) {
+                            feedback.setCharAt(i, 'o');
+                            matchedSecret[j] = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return feedback.toString();
+
 
 
 
